@@ -6,19 +6,19 @@
   <meta name="description" content="黒川嵩立のデータサイエンスポートフォリオサイト。プロジェクト、スキル、経歴などを掲載。">
   <title>黒川嵩立 | データサイエンスポートフォリオ</title>
   <!-- FontAwesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-        integrity="sha512-Fo3rlrZj/k7ujTTXRN+xhDla0DQ41ZtJ/Tj5TR2kZC5l+EQKzyVR6mC0x2X82vMum2I0fpy+kFPljM4+T5vH8w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- Devicon - 技術スタックアイコン -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Devicon -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-  <!-- 自作スタイルシート -->
+  <!-- styles -->
   <link rel="stylesheet" href="styles.css">
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
   <!-- ヘッダー -->
   <header id="header">
     <div class="container">
-      <a href="#" class="logo"><span>Portfolio</span></a>
+      <a href="#" class="logo">Portfolio</a>
       <div class="mobile-toggle" id="mobileToggle">
         <i class="fas fa-bars"></i>
       </div>
@@ -37,9 +37,11 @@
 
   <!-- ヒーローセクション -->
   <section id="hero">
-    <div class="data-particles" id="dataParticles"></div>
+    <div id="canvas-container"></div>
     <div class="container">
-      <div class="hero-content fade-in">
+      <div class="hero-content">
+        <h1>黒川 嵩立<br><span>Data Science Student</span></h1>
+        <p>データから価値を創造し、未来を予測する。機械学習とビジュアライゼーションで世界を変える。</p>
         <div>
           <a href="#projects" class="btn">プロジェクトを見る</a>
           <a href="#contact" class="btn btn-outline">お問い合わせ</a>
@@ -52,43 +54,43 @@
   <section id="about">
     <div class="container">
       <div class="section-header">
-        <h2>自己紹介</h2>
+        <h2 data-text="About Me">About Me</h2>
         <div class="section-divider"></div>
-        <p>武蔵野大学データサイエンス学部の学生として、データ分析と機械学習について学んでいます。</p>
+        <p>データサイエンスへの情熱と、テクノロジーで社会に貢献する夢</p>
       </div>
 
       <div class="about-content">
-        <div class="about-img slide-in-left">
+        <div class="about-img fade-in">
           <img src="images/IMG_6210.JPG" alt="黒川嵩立のプロフィール画像" />
         </div>
-        <div class="about-text slide-in-right">
+        <div class="about-text fade-in">
           <h3>こんにちは！黒川 嵩立です</h3>
           <p>武蔵野大学データサイエンス学部データサイエンス学科に所属しています。データ分析、機械学習、そして可視化技術を用いて、複雑なデータから意味のある洞察を導き出すことに興味を持っています。またゼミではwebアプリケーションの開発を行なっております。</p>
           <p>大学での学びを通じて、プログラミングスキルと統計知識を磨き、実社会の課題解決に貢献できることを目指しています。</p>
           
           <div class="about-info">
             <div class="info-item">
-              <div class="info-label">学部・学科:</div>
+              <div class="info-label"><i class="fas fa-graduation-cap"></i> 学部</div>
               <div>データサイエンス学部 データサイエンス学科</div>
             </div>
             <div class="info-item">
-              <div class="info-label">卒業予定:</div>
+              <div class="info-label"><i class="fas fa-calendar-alt"></i> 卒業予定</div>
               <div>2027年3月</div>
             </div>
             <div class="info-item">
-              <div class="info-label">メール:</div>
+              <div class="info-label"><i class="fas fa-envelope"></i> メール</div>
               <div>s2322024@stu.musashino-u.ac.jp</div>
             </div>
             <div class="info-item">
-              <div class="info-label">興味分野:</div>
-              <div>機械学習、データ可視化、自然言語処理、Webアプリケーション開発</div>
+              <div class="info-label"><i class="fas fa-heart"></i> 興味分野</div>
+              <div>機械学習、データ可視化、深層学習、Web開発、コンサル</div>
             </div>
           </div>
           
           <div class="social-links">
             <a href="https://github.com/kurokawatakeru" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/嵩立-黒川-62441b365/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://twitter.com/yourprofile" target="_blank"><i class="fab fa-twitter"></i></a>
           </div>
         </div>
       </div>
@@ -99,9 +101,9 @@
   <section id="skills">
     <div class="container">
       <div class="section-header">
-        <h2>スキル＆専門知識</h2>
+        <h2 data-text="Skills & Expertise">Skills & Expertise</h2>
         <div class="section-divider"></div>
-        <p>データサイエンティストとして必要な技術スキルと知識を日々向上させています。</p>
+        <p>最新のテクノロジーと分析手法を駆使して、データから洞察を導き出します</p>
       </div>
 
       <div class="skills-container">
@@ -110,7 +112,7 @@
           <ul class="skill-list">
             <li class="skill-badge">
               <i class="devicon-python-plain colored skill-icon"></i>
-              Python <span class="skill-highlight">主要言語</span>
+              Python <span class="skill-highlight">Expert</span>
             </li>
             <li class="skill-badge">
               <i class="devicon-php-plain colored skill-icon"></i>
@@ -124,18 +126,19 @@
               <i class="devicon-html5-plain colored skill-icon"></i>
               HTML/CSS
             </li>
+            <li class="skill-badge">
+              <i class="devicon-r-plain colored skill-icon"></i>
+              R
+            </li>
           </ul>
-          <div class="skill-description">
-            <p>Pythonがメイン言語で、データ分析・機械学習の実装に使用。ウェブ開発にも各種言語を活用しています。</p>
-          </div>
         </div>
 
-        <div class="skill-category fade-in delay-1">
+        <div class="skill-category fade-in">
           <h3><i class="fas fa-chart-line"></i> データ分析ツール</h3>
           <ul class="skill-list">
             <li class="skill-badge">
               <i class="devicon-pandas-original colored skill-icon"></i>
-              Pandas <span class="skill-highlight">得意</span>
+              Pandas <span class="skill-highlight">Advanced</span>
             </li>
             <li class="skill-badge">
               <i class="devicon-numpy-original colored skill-icon"></i>
@@ -150,38 +153,35 @@
               TensorFlow
             </li>
             <li class="skill-badge">
-              <i class="fas fa-chart-area skill-icon"></i>
-              Matplotlib
+              <i class="devicon-pytorch-original colored skill-icon"></i>
+              PyTorch
             </li>
           </ul>
-          <div class="skill-description">
-            <p>Pythonのデータサイエンスライブラリを使った分析経験が豊富です。特にPandasを使ったデータ処理に強みがあります。</p>
-          </div>
         </div>
 
-        <div class="skill-category fade-in delay-2">
+        <div class="skill-category fade-in">
           <h3><i class="fas fa-database"></i> データベース</h3>
           <ul class="skill-list">
             <li class="skill-badge">
               <i class="devicon-mysql-plain colored skill-icon"></i>
-              MySQL <span class="skill-highlight">頻用</span>
+              MySQL <span class="skill-highlight">Expert</span>
             </li>
             <li class="skill-badge">
               <i class="devicon-postgresql-plain colored skill-icon"></i>
               PostgreSQL
             </li>
             <li class="skill-badge">
-              <i class="devicon-sqlite-plain colored skill-icon"></i>
-              SQLite
+              <i class="devicon-mongodb-plain colored skill-icon"></i>
+              MongoDB
             </li>
           </ul>
           <div class="skill-description">
-            <p>データベースの設計と操作の経験があります。よくPSQLを活用しています。</p>
+            <p>大規模データの効率的な管理と高速クエリ処理のエキスパート</p>
           </div>
         </div>
 
-        <div class="skill-category fade-in delay-3">
-          <h3><i class="fas fa-desktop"></i> フレームワーク</h3>
+        <div class="skill-category fade-in">
+          <h3><i class="fas fa-cloud"></i> フレームワーク</h3>
           <ul class="skill-list">
             <li class="skill-badge">
               <i class="devicon-flask-original colored skill-icon"></i>
@@ -200,157 +200,190 @@
     </div>
   </section>
 
-  <!-- プロジェクトセクション -->
-  <section id="projects">
-    <div class="container">
-      <div class="section-header">
-        <h2>プロジェクト</h2>
-        <div class="section-divider"></div>
-        <p>学んだことを活かして取り組んだプロジェクトの一部です。</p>
+<!-- プロジェクトセクション -->
+<section id="projects">
+  <div class="container">
+    <div class="section-header">
+      <h2>プロジェクト</h2>
+      <div class="section-divider"></div>
+      <p>学んだことを活かして取り組んだプロジェクトの一部です。</p>
+    </div>
+
+    <div class="projects-grid">
+      <div class="project-card fade-in">
+        <div class="project-img">
+          <img src="images/character-sheet.png" alt="プロジェクト" />
+        </div>
+        <div class="project-content">
+          <h3>cocのキャラクター作成ツール</h3>
+          <div class="project-tags">
+            <span class="project-tag">JavaScript</span>
+            <span class="project-tag">HTML</span>
+            <span class="project-tag">CSS</span>
+          </div>
+          <p>このツールは、クトゥルフ神話TRPGのキャラクター作成を支援するウェブアプリケーションです。</p>
+          <div class="project-buttons">
+            <a href="https://github.com/kurokawatakeru/coc-" class="project-btn"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://gms.gdl.jp/~kuro/Cthulhu/" class="project-btn demo"><i class="fas fa-external-link-alt"></i> Site</a>
+          </div>
+        </div>
       </div>
 
-      <div class="projects-grid">
-        <div class="project-card fade-in">
-          <div class="project-img">
-            <img src="images/character-sheet.png" alt="プロジェクト" />
+      <div class="project-card fade-in delay-3">
+        <div class="project-img">
+          <img src="images/valo.png" alt="新しいプロジェクトの画像" />
+        </div>
+        <div class="project-content">
+          <h3>VALORANTプレイヤー成長ストーリーサイト</h3>
+          <div class="project-tags">
+            <span class="project-tag">TypeScript</span>
+            <span class="project-tag">Python</span>
+            <span class="project-tag">HTML</span>
+            <span class="project-tag">CSS</span>
+            <span class="project-tag">JavaScript</span>
           </div>
-          <div class="project-content">
-            <h3>cocのキャラクター作成ツール</h3>
-            <div class="project-tags">
-              <span class="project-tag">JavaScript</span>
-              <span class="project-tag">HTML</html></span>
-              <span class="project-tag">CSS</span>
-            </div>
-            <p>このツールは、クトゥルフ神話TRPGのキャラクター作成を支援するウェブアプリケーションです。</p>
-            <div class="project-buttons">
-              <a href="https://github.com/kurokawatakeru/coc-" class="project-btn"><i class="fab fa-github"></i> GitHub</a>
-              <a href="https://gms.gdl.jp/~kuro/Cthulhu/" class="project-btn demo"><i class="fas fa-external-link-alt"></i> Site</a>
-            </div>
+          <p>VALORANTプロプレイヤーの成長過程をデータで可視化し、単なる統計ではなく「物語」として伝えるWebアプリケーションです。現在はプロトタイプ段階です。</p>
+          <div class="project-buttons">
+            <a href="https://github.com/kurokawatakeru/valorant-player-webapp" class="project-btn"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://valorant-player-webapp-git-main-outoroma96s-projects.vercel.app/" class="project-btn demo"><i class="fas fa-external-link-alt"></i> Site</a>
           </div>
         </div>
+      </div>
 
-        <div class="project-card fade-in delay-3">
-          <div class="project-img">
-            <img src="images/valo.png" alt="新しいプロジェクトの画像" />
+      <div class="project-card fade-in delay-1">
+        <div class="project-img">
+          <img src="images/ss.png" alt="プロジェクト" />
+        </div>
+        <div class="project-content">
+          <h3>club_match</h3>
+          <div class="project-tags">
+            <span class="project-tag">PHP</span>
           </div>
-          <div class="project-content">
-            <h3>VALORANTプレイヤー成長ストーリーサイト</h3>
-            <div class="project-tags">
-              <span class="project-tag">TypeScript</span>
-              <span class="project-tag">python</span>
-              <span class="project-tag">HTML</span>
-              <span class="project-tag">CSS</span>
-              <span class="project-tag">JavaScript</span>
-            </div>
-            <p>VALORANTプロプレイヤーの成長過程をデータで可視化し、単なる統計ではなく「物語」として伝えるWebアプリケーションです。現在はプロトタイプ段階です。
-            </p>
-            <div class="project-buttons">
-              <a href="https://github.com/kurokawatakeru/valorant-player-webapp" class="project-btn"><i class="fab fa-github"></i> GitHub</a>
-              <a href="https://valorant-player-webapp-git-main-outoroma96s-projects.vercel.app/" class="project-btn demo"><i class="fas fa-external-link-alt"></i> Site</a>
-            </div>
+          <p>学校の枠を越え、他校の部活動と合同練習や交流試合をひとつの画面で募集・応募・承認・チャットまで一貫管理できるマッチングプラットフォームです。demoメールアドレス :test@example.com password :password</p>
+          <div class="project-buttons">
+            <a href="https://github.com/kurokawatakeru/club_match" class="project-btn"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://gms.gdl.jp/~kuro/club_match/" class="project-btn demo"><i class="fas fa-external-link-alt"></i> Site</a>
           </div>
         </div>
+      </div>
 
-        <div class="project-card fade-in delay-1">
-          <div class="project-img">
-            <img src="images/ss.png" alt="プロジェクト" />
+      <div class="project-card fade-in delay-1">
+        <div class="project-img">
+          <img src="images/building_food_family_restaurant.png" alt="プロジェクト" />
+        </div>
+        <div class="project-content">
+          <h3>サイゼリヤ 1000円ガチャ</h3>
+          <div class="project-tags">
+            <span class="project-tag">JavaScript</span>
+            <span class="project-tag">HTML</span>
+            <span class="project-tag">CSS</span>
           </div>
-          <div class="project-content">
-            <h3>club_match</h3>
-            <div class="project-tags">
-              <span class="project-tag">PHP</span>
-            </div>
-            <p>学校の枠を越え、他校の部活動と合同練習や交流試合をひとつの画面で募集・応募・承認・チャットまで一貫管理できるマッチングプラットフォームです。demoメールアドレス :test@example.com password :password</p>
-            <div class="project-buttons">
-              <a href="https://github.com/kurokawatakeru/club_match" class="project-btn"><i class="fab fa-github"></i> GitHub</a>
-              <a href="https://gms.gdl.jp/~kuro/club_match/" class="project-btn demo"><i class="fas fa-external-link-alt"></i> Site</a>
-            </div>
+          <p>このウェブアプリケーションは、サイゼリヤの公式メニューをベースにした「900-1000円ガチャ」です。ガチャボタンを押すと、合計金額が900円以上1000円以内になるようにメニューをランダムに組み合わせて表示します。料理ごとの詳細情報（商品番号、料理名、価格、カロリー、塩分、アレルギー情報）も確認できます。</p>
+          <div class="project-buttons">
+            <a href="https://github.com/kurokawatakeru/SAIZERIYA1000Gacha" class="project-btn"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://gms.gdl.jp/~kuro/サイゼリア1000円ガチャ/" class="project-btn demo"><i class="fas fa-external-link-alt"></i> Site</a>
           </div>
         </div>
+      </div>
 
-        <div class="project-card fade-in delay-1">
-          <div class="project-img">
-            <img src="images/building_food_family_restaurant.png" alt="プロジェクト" />
-          </div>
-          <div class="project-content">
-            <h3>サイゼリヤ 1000円ガチャ</h3>
-            <div class="project-tags">
-              <span class="project-tag">JavaScript</span>
-              <span class="project-tag">HTML</span>
-              <span class="project-tag">CSS</span>
-            </div>
-            <p>このウェブアプリケーションは、サイゼリヤの公式メニューをベースにした「900-1000円ガチャ」です。ガチャボタンを押すと、合計金額が900円以上1000円以内になるようにメニューをランダムに組み合わせて表示します。料理ごとの詳細情報（商品番号、料理名、価格、カロリー、塩分、アレルギー情報）も確認できます。</p>
-            <div class="project-buttons">
-              <a href="https://github.com/kurokawatakeru/SAIZERIYA1000Gacha" class="project-btn"><i class="fab fa-github"></i> GitHub</a>
-              <a href="https://gms.gdl.jp/~kuro/サイゼリア1000円ガチャ/" class="project-btn demo"><i class="fas fa-external-link-alt"></i> Site</a>
-            </div>
-          </div>
+      <div class="project-card fade-in delay-2">
+        <div class="project-img">
+          <img src="images/bg.jpg" alt="プロジェクト" />
         </div>
-
-        <div class="project-card fade-in delay-2">
-          <div class="project-img">
-            <img src="images/bg.jpg" alt="プロジェクト" />
+        <div class="project-content">
+          <h3>Korea Casino Map</h3>
+          <div class="project-tags">
+            <span class="project-tag">PHP</span>
+            <span class="project-tag">JavaScript</span>
           </div>
-          <div class="project-content">
-            <h3>Korea Casino Map</h3>
-            <div class="project-tags">
-              <span class="project-tag">PHP</span>
-              <span class="project-tag">JavaScript</span>
-            </div>
-            <p>カジノ情報の閲覧・共有に特化したマップ連携サイト</p>
-            <div class="project-buttons">
-              <a href="https://github.com/kurokawatakeru/casino" class="project-btn"><i class="fab fa-github"></i> GitHub</a>
-              <a href="https://gms.gdl.jp/~kuro/casino/" class="project-btn demo"><i class="fas fa-external-link-alt"></i> Site</a>
-            </div>
+          <p>カジノ情報の閲覧・共有に特化したマップ連携サイト</p>
+          <div class="project-buttons">
+            <a href="https://github.com/kurokawatakeru/casino" class="project-btn"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://gms.gdl.jp/~kuro/casino/" class="project-btn demo"><i class="fas fa-external-link-alt"></i> Site</a>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- 経歴セクション -->
   <section id="resume">
     <div class="container">
       <div class="section-header">
-        <h2>学歴と経歴</h2>
+        <h2 data-text="Education & Experience">Education & Experience</h2>
         <div class="section-divider"></div>
-        <p>私の学びの軌跡とこれまでの経験をご紹介します。</p>
+        <p>学びと成長の軌跡</p>
       </div>
 
       <div class="timeline">
-        <div class="timeline-item fade-in">
+        <div class="timeline-item">
           <div class="timeline-content">
-            <span class="timeline-date">2025年4月 - 現在</span>
-            <h3>武蔵野大学 データサイエンス学部</h3>
+            <span class="timeline-date">2020年4月 </span>
+            <h3>水城高等学校SZコース - 入学</h3>
+            <p></p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <span class="timeline-date">2023年3月 </span>
+            <h3>水城高等学校SZコース - 卒業</h3>
+            <p></p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <span class="timeline-date">2023年4月 </span>
+            <h3>武蔵野大学 データサイエンス学部 - 入学</h3>
             <p>データサイエンス学科に所属し、統計学、機械学習、プログラミングなどを学んでいます。</p>
           </div>
         </div>
-      </div>
-
-      <!-- <div class="resume-download">
-        <a href="resume.pdf" class="btn" target="_blank">履歴書をダウンロード <i class="fas fa-download"></i></a>
-      </div> -->
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <span class="timeline-date">2025年5月 - 現在</span>
+            <h3>Hackathon</h3>
+            <p>第2回 AI Agent Hackathon with Google Cloud挑戦中</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- お問い合わせセクション -->
-  <section id="contact" class="notion-section fade-in">
+  <section id="contact">
     <div class="container">
-      <h2>お問い合わせ</h2>
-      <form id="contactForm" class="notion-form" method="POST" action="https://formspree.io/f/moveonvn">
-        <label for="name">名前</label>
-        <input type="text" id="name" name="name" required>
-        
-        <label for="email">メール</label>
-        <input type="email" id="email" name="email" required>
-        
-        <label for="message">メッセージ</label>
-        <textarea id="message" name="message" required></textarea>
-        
-        <button type="submit" class="notion-btn">送信</button>
-      </form>
-      <div id="formMessage"></div>
+      <div class="section-header">
+        <h2 data-text="Get In Touch">Get In Touch</h2>
+        <div class="section-divider"></div>
+        <p>新しいプロジェクトやコラボレーションについて話しましょう</p>
+      </div>
+
+      <div class="contact-container">
+        <form id="contactForm" class="contact-form" method="POST" action="https://formspree.io/f/moveonvn">
+          <div class="form-group">
+            <label for="name">お名前</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">メールアドレス</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">メッセージ</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          
+          <div class="form-submit">
+            <button type="submit" class="btn">
+              <i class="fas fa-paper-plane"></i> 送信する
+            </button>
+          </div>
+        </form>
+        <div id="formMessage"></div>
+      </div>
     </div>
   </section>
 
@@ -360,7 +393,7 @@
       <div class="footer-content">
         <div class="footer-info">
           <h3>Takeru Kurokawa</h3>
-          <p>データサイエンス学生  | データサイエンス専攻</p>
+          <p>データサイエンティストを目指す学生<br>革新的なソリューションで世界を変える</p>
           <div class="social-links">
             <a href="https://github.com/kurokawatakeru" target="_blank"><i class="fab fa-github"></i></a>
             <a href="https://www.linkedin.com/in/嵩立-黒川-62441b365/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
@@ -380,17 +413,18 @@
         <div class="footer-links">
           <h3>リソース</h3>
           <ul>
-            <li><a href="resume.pdf" target="_blank">履歴書</a></li>
+            <li><a href="https://github.com/kurokawatakeru" target="_blank">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/嵩立-黒川-62441b365/" target="_blank">LinkedIn</a></li>
+            <li><a href="mailto:s2322024@stu.musashino-u.ac.jp">Email</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 黒川嵩立. All Rights Reserved.</p>
+        <p>&copy; 2025 黒川嵩立. All Rights Reserved. | Crafted with <i class="fas fa-heart" style="color: var(--neon-blue);"></i> and Code</p>
       </div>
     </div>
   </footer>
 
-  <!-- JavaScriptファイルの読み込み -->
   <script src="script.js"></script>
 </body>
 </html>
